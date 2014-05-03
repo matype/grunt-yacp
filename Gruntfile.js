@@ -36,11 +36,7 @@ module.exports = function (grunt) {
         files: {
           'tmp/yacp.css': ['test/fixtures/yacp.css'],
           'tmp/concat.css': ['test/fixtures/yacp.css', 'test/fixtures/yacp2.css'],
-        }/*,
-        options: {
-          paths: ['test/fixtures/include'],
-          compress: true
-        }*/
+        }
       }
     },
 
