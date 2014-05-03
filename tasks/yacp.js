@@ -1,6 +1,6 @@
 /*
  * grunt-yacp
- * 
+ *
  *
  * Copyright (c) 2014 Masaaki Morishita
  * Licensed under the MIT license.
@@ -10,13 +10,12 @@
 
 module.exports = function (grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+  var yacp = require('yacp');
 
-  grunt.registerMultiTask('yacp', 'The best Grunt plugin ever.', function () {
+  grunt.registerMultiTask('yacp', 'Compile YACP (Yet Another CSS Preprocessor)', function () {
 
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
+    var options = this.options ({
       punctuation: '.',
       separator: ', '
     });
