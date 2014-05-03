@@ -10,7 +10,7 @@
 
 module.exports = function (grunt) {
 
-  var yacp = require('yacp');
+  var Yacp = require('yacp');
 
   grunt.registerMultiTask('yacp', 'Compile YACP (Yet Another CSS Preprocessor)', function () {
 
@@ -33,7 +33,9 @@ module.exports = function (grunt) {
         }
       }).map(function (filepath) {
         // Read file source.
-        return grunt.file.read(filepath);
+        var yacpFile = grunt.file.read(filepath);
+        var yacp = new Yacp(yacpFile);
+        return yacp.toString();
       }).join(grunt.util.normalizelf(options.separator));
 
       // Handle options.

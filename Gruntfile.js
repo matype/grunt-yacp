@@ -1,6 +1,6 @@
 /*
  * grunt-yacp
- * 
+ *
  *
  * Copyright (c) 2014 Masaaki Morishita
  * Licensed under the MIT license.
@@ -17,8 +17,7 @@ module.exports = function (grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
+        'tasks/*.js'
       ],
       options: {
         jshintrc: '.jshintrc',
@@ -33,28 +32,17 @@ module.exports = function (grunt) {
 
     // Configuration to be run (and then tested).
     yacp: {
-      default_options: {
-        options: {
-        },
+      compile: {
         files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
+          'tmp/yacp.css': ['test/fixtures/yacp.css'],
+          'tmp/concat.css': ['test/fixtures/yacp.css', 'test/fixtures/yacp2.css'],
         },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+        options: {
+          paths: ['test/fixtures/include'],
+          compress: true
         }
       }
     },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    }
 
   });
 
@@ -63,7 +51,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'yacp', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'yacp']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
