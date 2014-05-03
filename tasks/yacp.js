@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options ({
       punctuation: '.',
-      separator: ', '
+      separator: '\n'
     });
 
     // Iterate over all specified file groups.
@@ -37,9 +37,6 @@ module.exports = function (grunt) {
         var yacp = new Yacp(yacpFile);
         return yacp.toString();
       }).join(grunt.util.normalizelf(options.separator));
-
-      // Handle options.
-      src += options.punctuation;
 
       // Write the destination file.
       grunt.file.write(file.dest, src);

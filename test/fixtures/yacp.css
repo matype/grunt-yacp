@@ -1,0 +1,15 @@
+:root {
+  --font-lg: 18px;
+}
+
+%att {
+  color: red;
+  font-weight: normal;
+}
+
+.attBox {
+  extend: %att;
+  box-shadow: 5px 5px;
+  font-size: var(--font-lg);
+  padding: 5px 10px;
+}
