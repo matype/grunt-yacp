@@ -1,6 +1,6 @@
 # grunt-yacp [![Build Status](https://travis-ci.org/morishitter/grunt-yacp.svg)](https://travis-ci.org/morishitter/grunt-yacp)
 
-> Compile YACP files to CSS
+> Compile [YACP](https://github.com/morishitter/YACP) files to CSS
 
 ## Getting Started
 This plugin requires Grunt`~0.4.0`
